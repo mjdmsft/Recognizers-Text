@@ -63,7 +63,7 @@ OrdinalNumericRegex: !simpleRegex
 OrdinalRoundNumberRegex: !nestedRegex
   def: (?<!(a|an)\s+){RoundNumberOrdinalRegex}
   references: [ RoundNumberOrdinalRegex ]
-OrdinalEnglishRegex: !nestedRegex
+OrdinalDutchRegex: !nestedRegex
   def: (?<=\b){AllOrdinalRegex}(?=\b)
   references: [ AllOrdinalRegex ]
 #Fraction Regex
