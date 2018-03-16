@@ -1,7 +1,7 @@
 import { ParseResult } from "@microsoft/recognizers-text";
 import { INumberParserConfiguration } from "../parsers";
 import { CultureInfo, Culture } from "../../culture";
-import { EnglishNumeric } from "../../resources/englishNumeric";
+import { DutchNumeric } from "../../resources/DutchNumeric";
 import { RegExpUtility } from "@microsoft/recognizers-text"
 
 export class DutchNumberParserConfiguration implements INumberParserConfiguration {
@@ -31,66 +31,58 @@ export class DutchNumberParserConfiguration implements INumberParserConfiguratio
 
         this.cultureInfo = ci;
 
-        this.langMarker = EnglishNumeric.LangMarker;
-        this.decimalSeparatorChar = EnglishNumeric.DecimalSeparatorChar;
-        this.fractionMarkerToken = EnglishNumeric.FractionMarkerToken;
-        this.nonDecimalSeparatorChar = EnglishNumeric.NonDecimalSeparatorChar;
-        this.halfADozenText = EnglishNumeric.HalfADozenText;
-        this.wordSeparatorToken = EnglishNumeric.WordSeparatorToken;
+        this.langMarker = DutchNumeric.LangMarker;
+        this.decimalSeparatorChar = DutchNumeric.DecimalSeparatorChar;
+        this.fractionMarkerToken = DutchNumeric.FractionMarkerToken;
+        this.nonDecimalSeparatorChar = DutchNumeric.NonDecimalSeparatorChar;
+        this.halfADozenText = DutchNumeric.HalfADozenText;
+        this.wordSeparatorToken = DutchNumeric.WordSeparatorToken;
 
-        this.writtenDecimalSeparatorTexts = EnglishNumeric.WrittenDecimalSeparatorTexts;
-        this.writtenGroupSeparatorTexts = EnglishNumeric.WrittenGroupSeparatorTexts;
-        this.writtenIntegerSeparatorTexts = EnglishNumeric.WrittenIntegerSeparatorTexts;
-        this.writtenFractionSeparatorTexts = EnglishNumeric.WrittenFractionSeparatorTexts;
+        this.writtenDecimalSeparatorTexts = DutchNumeric.WrittenDecimalSeparatorTexts;
+        this.writtenGroupSeparatorTexts = DutchNumeric.WrittenGroupSeparatorTexts;
+        this.writtenIntegerSeparatorTexts = DutchNumeric.WrittenIntegerSeparatorTexts;
+        this.writtenFractionSeparatorTexts = DutchNumeric.WrittenFractionSeparatorTexts;
 
-        this.cardinalNumberMap = EnglishNumeric.CardinalNumberMap;
-        this.ordinalNumberMap = EnglishNumeric.OrdinalNumberMap;
-        this.roundNumberMap = EnglishNumeric.RoundNumberMap;
-        this.negativeNumberSignRegex = RegExpUtility.getSafeRegExp(EnglishNumeric.NegativeNumberSignRegex, "is");
-        this.halfADozenRegex = RegExpUtility.getSafeRegExp(EnglishNumeric.HalfADozenRegex, "gis");
-        this.digitalNumberRegex = RegExpUtility.getSafeRegExp(EnglishNumeric.DigitalNumberRegex, "gis");
+        this.cardinalNumberMap = DutchNumeric.CardinalNumberMap;
+        this.ordinalNumberMap = DutchNumeric.OrdinalNumberMap;
+        this.roundNumberMap = DutchNumeric.RoundNumberMap;
+        this.negativeNumberSignRegex = RegExpUtility.getSafeRegExp(DutchNumeric.NegativeNumberSignRegex, "is");
+        this.halfADozenRegex = RegExpUtility.getSafeRegExp(DutchNumeric.HalfADozenRegex);
+        this.digitalNumberRegex = RegExpUtility.getSafeRegExp(DutchNumeric.DigitalNumberRegex);
     }
 
     normalizeTokenSet(tokens: ReadonlyArray<string>, context: ParseResult): ReadonlyArray<string> {
-        let fracWords = new Array<string>();
-        let tokenList = Array.from(tokens);
-        let tokenLen = tokenList.length;
-        for (let i = 0; i < tokenLen; i++) {
-            if ((i < tokenLen - 2) && tokenList[i + 1] === "-") {
-                fracWords.push(tokenList[i] + tokenList[i + 1] + tokenList[i + 2]);
-                i += 2;
-            }
-            else {
-                fracWords.push(tokenList[i]);
-            }
-        }
-        return fracWords;
+        return tokens;
     }
 
     resolveCompositeNumber(numberStr: string): number {
-        if (numberStr.includes("-")) {
-            let numbers = numberStr.split('-');
-            let ret = 0;
-            numbers.forEach(num => {
-                if (this.ordinalNumberMap.has(num)) {
-                    ret += this.ordinalNumberMap.get(num) as number;
-                }
-                else if (this.cardinalNumberMap.has(num)) {
-                    ret += this.cardinalNumberMap.get(num) as number;
-                }
-            });
-
-            return ret;
-        }
-
         if (this.ordinalNumberMap.has(numberStr)) {
-            return this.ordinalNumberMap.get(numberStr) as number;
+            return this.ordinalNumberMap.get(numberStr);
         }
 
         if (this.cardinalNumberMap.has(numberStr)) {
-            return this.cardinalNumberMap.get(numberStr) as number;
+            return this.cardinalNumberMap.get(numberStr);
         }
 
-        return 0;
+        let value = 0;
+        let finalValue = 0;
+        let strBuilder = "";
+        let lastGoodChar = 0;
+        for (let i = 0; i < numberStr.length; i++) {
+            strBuilder = strBuilder.concat(numberStr[i]);
+            if (this.cardinalNumberMap.has(strBuilder) && this.cardinalNumberMap.get(strBuilder) > value) {
+                lastGoodChar = i;
+                value = this.cardinalNumberMap.get(strBuilder);
+            }
+
+            if ((i + 1) === numberStr.length) {
+                finalValue += value;
+                strBuilder = "";
+                i = lastGoodChar++;
+                value = 0;
+            }
+        }
+        
+        return finalValue;
     }
 }
