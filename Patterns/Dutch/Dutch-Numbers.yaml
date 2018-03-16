@@ -11,7 +11,7 @@ NegativeNumberSignRegex: !nestedRegex
   def: ^{NegativeNumberTermsRegex}.*
   references: [ NegativeNumberTermsRegex ]
 AnIntRegex: !simpleRegex
-  def: (an|a)(?=\s)
+  def: (een)(?=\s)
 TenToNineteenIntegerRegex: !simpleRegex
   def: (zeventien|dertien|veertien|achttien|negentien|vijftien|zestien|elf|twaalf|tien)
 TensNumberIntegerRegex: !simpleRegex
@@ -110,30 +110,30 @@ CurrencyRegex: !simpleRegex
   def: (((?<=\W|^)-\s*)|(?<=\b))\d+\s*(B|b|m|t|g)(?=\b)
 #Percentage Regex
 NumberWithSuffixPercentage: !nestedRegex
-  def: ({BaseNumbers.NumberReplaceToken})(\s*)(%|per cents|per cent|cents|cent|percentage|percents|percent)
+  def: ({BaseNumbers.NumberReplaceToken})(\s*)(%|procent|percentage)
   references: [ BaseNumbers.NumberReplaceToken ]
 NumberWithPrefixPercentage: !nestedRegex
-  def: (per cent of|percent of|percents of)(\s*)({BaseNumbers.NumberReplaceToken})
+  def: (percentage van|procent van|procenten van)(\s*)({BaseNumbers.NumberReplaceToken})
   references: [ BaseNumbers.NumberReplaceToken ]
 #NumberRange Regex
 TillRegex: !simpleRegex
-  def: (to|through|--|-|—|——|~)
+  def: (tot|--|-|—|——|~)
 MoreRegex: !simpleRegex
-  def: ((bigger|greater|more|higher|larger)(\s+than)?|above|over|>)
+  def: ((groter|hoger|meer)(\s+dan|\s+als)?|boven|over|>)
 LessRegex: !simpleRegex
-  def: ((less|lower|smaller|fewer)(\s+than)?|below|under|<)
+  def: ((minder|lager|kleiner)(\s+dan|\s+als)?|beneden|onder|<)
 EqualRegex: !simpleRegex
-  def: (equal(\s+(to|than))?|=)
+  def: (gelijk(\s+(aan|als))?|=)
 MoreOrEqual: !nestedRegex
   def: (({MoreRegex}\s+or\s+{EqualRegex})|at\s+least|no\s+{LessRegex}|>\s*=)
   references: [ MoreRegex, EqualRegex, LessRegex ]
 MoreOrEqualSuffix: !simpleRegex
-  def: (and|or)\s+(more|greater|higher|larger|bigger)(?!\s+than)
+  def: (en|of)\s+(meer|groter|hoger|grotere)(?!\s+than)
 LessOrEqual: !nestedRegex
   def: (({LessRegex}\s+or\s+{EqualRegex})|at\s+most|no\s+{MoreRegex}|<\s*=)
   references: [ LessRegex, EqualRegex, MoreRegex ]
 LessOrEqualSuffix: !simpleRegex
-  def: (and|or)\s+(less|lower|smaller|fewer)(?!\s+than)
+  def: (en|of)\s+(minder|lager|kleiner)(?!\s+than)
 OneNumberRangeMoreRegex1: !nestedRegex
   def: ({MoreOrEqual}|{MoreRegex})\s*(the\s+)?(?<number1>((?!((\.(?!\d+))|(,(?!\d+)))).)+)
   references: [ MoreOrEqual, MoreRegex ]
@@ -162,19 +162,19 @@ TwoNumberRangeRegex4: !nestedRegex
   def: (from\s+)?(?<number1>((?!((\.(?!\d+))|(,(?!\d+))|\bfrom\b)).)+)\s*{TillRegex}\s*(the\s+)?(?<number2>((?!((\.(?!\d+))|(,(?!\d+)))).)+)
   references: [ TillRegex ]
 #Parser
-DecimalSeparatorChar: !char '.'
+DecimalSeparatorChar: !char ','
 FractionMarkerToken: over
-NonDecimalSeparatorChar: !char ','
-HalfADozenText: six
+NonDecimalSeparatorChar: !char '.'
+HalfADozenText: zes
 WordSeparatorToken: en
-WrittenDecimalSeparatorTexts: [point]
-WrittenGroupSeparatorTexts: [punto]
-WrittenIntegerSeparatorTexts: [and]
-WrittenFractionSeparatorTexts: [and]
+WrittenDecimalSeparatorTexts: [punt]
+WrittenGroupSeparatorTexts: [punto] #??
+WrittenIntegerSeparatorTexts: [en]
+WrittenFractionSeparatorTexts: [en]
 HalfADozenRegex: !simpleRegex
   def: half\s+a\s+dozen
 DigitalNumberRegex: !simpleRegex
-  def: ((?<=\b)(hundred|thousand|million|billion|trillion|dozen(s)?)(?=\b))|((?<=(\d|\b))(k|t|m|g|b)(?=\b))
+  def: ((?<=\b)(honderd|duizend|miljoen|miljard|biljoen|dozijn?)(?=\b))|((?<=(\d|\b))(k|t|m|g|b)(?=\b))
 CardinalNumberMap: !dictionary
   types: [ string, long ]
   entries:
@@ -209,6 +209,7 @@ CardinalNumberMap: !dictionary
     tachtig: 80
     negentig: 90
     honderd: 100
+    gros: 144
     duizend: 1000
     miljoen: 1000000
     miljard: 1000000000
