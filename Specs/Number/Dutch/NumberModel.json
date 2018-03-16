@@ -1,0 +1,44 @@
+[
+    {
+      "Input": "2",
+      "NotSupportedByDesign": "python",
+      "NotSupported": ".net",
+      "Results": [
+        {
+          "Text": "2",
+          "TypeName": "number",
+          "Resolution": {
+            "value": "2"
+          }
+        }
+      ]
+    },
+    {
+      "Input": "één",
+      "NotSupportedByDesign": "python",
+      "NotSupported": ".net",
+      "Results": [
+        {
+          "Text": "één",
+          "TypeName": "number",
+          "Resolution": {
+            "value": "1"
+          }
+        }
+      ]
+    },
+    {
+      "Input": "1/2",
+      "NotSupportedByDesign": "python",
+      "NotSupported": ".net",
+      "Results": [
+        {
+          "Text": "1/2",
+          "TypeName": "number",
+          "Resolution": {
+            "value": "0,5"
+          }
+        }
+      ]
+    }
+]

@@ -7,5 +7,6 @@ module.exports = {
     'Chinese': Culture.supportedCultures.find(c => c.cultureCode === Culture.Chinese),
     'Portuguese': Culture.supportedCultures.find(c => c.cultureCode === Culture.Portuguese),
     'French': Culture.supportedCultures.find(c => c.cultureCode === Culture.French),
-    'Japanese': Culture.supportedCultures.find(c => c.cultureCode === Culture.Japanese)
+    'Japanese': Culture.supportedCultures.find(c => c.cultureCode === Culture.Japanese),
+    'Dutch': Culture.supportedCultures.find(c => c.cultureCode === Culture.Dutch)
 };
