@@ -1,7 +1,7 @@
 import { BaseNumberExtractor, RegExpValue, BasePercentageExtractor } from "../extractors";
 import { Constants } from "../constants";
 import { NumberMode, LongFormatType } from "../models";
-import { DutchNumeric } from "../../resources/DutchNumeric";
+import { DutchNumeric } from "../../resources/dutchNumeric";
 import { RegExpUtility } from "@microsoft/recognizers-text"
 
 export class DutchNumberExtractor extends BaseNumberExtractor {
