@@ -172,7 +172,7 @@ WrittenGroupSeparatorTexts: [punto] #??
 WrittenIntegerSeparatorTexts: [en]
 WrittenFractionSeparatorTexts: [en]
 HalfADozenRegex: !simpleRegex
-  def: half\s+a\s+dozen
+  def: half\s+dozijn
 DigitalNumberRegex: !simpleRegex
   def: ((?<=\b)(honderd|duizend|miljoen|miljard|biljoen|dozijn?)(?=\b))|((?<=(\d|\b))(k|t|m|g|b)(?=\b))
 CardinalNumberMap: !dictionary
@@ -217,94 +217,60 @@ CardinalNumberMap: !dictionary
 OrdinalNumberMap: !dictionary
   types: [ string, long ]
   entries:
-    first: 1
-    second: 2
-    secondary: 2
-    half: 2
-    third: 3
-    fourth: 4
-    quarter: 4
-    fifth: 5
-    sixth: 6
-    seventh: 7
-    eighth: 8
-    ninth: 9
-    tenth: 10
-    eleventh: 11
-    twelfth: 12
-    thirteenth: 13
-    fourteenth: 14
-    fifteenth: 15
-    sixteenth: 16
-    seventeenth: 17
-    eighteenth: 18
-    nineteenth: 19
-    twentieth: 20
-    thirtieth: 30
-    fortieth: 40
-    fiftieth: 50
-    sixtieth: 60
-    seventieth: 70
-    eightieth: 80
-    ninetieth: 90
-    hundredth: 100
-    thousandth: 1000
-    millionth: 1000000
-    billionth: 1000000000
-    trillionth: 1000000000000
-    firsts: 1
-    halves: 2
-    thirds: 3
-    fourths: 4
-    quarters: 4
-    fifths: 5
-    sixths: 6
-    sevenths: 7
-    eighths: 8
-    ninths: 9
-    tenths: 10
-    elevenths: 11
-    twelfths: 12
-    thirteenths: 13
-    fourteenths: 14
-    fifteenths: 15
-    sixteenths: 16
-    seventeenths: 17
-    eighteenths: 18
-    nineteenths: 19
-    twentieths: 20
-    thirtieths: 30
-    fortieths: 40
-    fiftieths: 50
-    sixtieths: 60
-    seventieths: 70
-    eightieths: 80
-    ninetieths: 90
-    hundredths: 100
-    thousandths: 1000
-    millionths: 1000000
-    billionths: 1000000000
-    trillionths: 1000000000000
+    eerste: 1
+    tweede: 2
+    secundair: 2
+    derde: 3
+    vierde: 4
+    kwart: 4
+    vijfde: 5
+    zesde: 6
+    zevende: 7
+    achtste: 8
+    negende: 9
+    tiende: 10
+    elfde: 11
+    twaalfde: 12
+    dertiende: 13
+    veertiende: 14
+    vijftiende: 15
+    zestiende: 16
+    zeventiende: 17
+    achttiende: 18
+    negentiende: 19
+    twintigste: 20
+    dertigste: 30
+    veertigste: 40
+    vijftigste: 50
+    zestigste: 60
+    zeventigste: 70
+    tachtigste: 80
+    negentigste: 90
+    honderdste: 100
+    duizendste: 1000
+    miljoenste: 1000000
+    miljardste: 1000000000
+    biljoenste: 1000000000000
 RoundNumberMap: !dictionary
   types: [ string, long ]
   entries:
-    hundred: 100
-    thousand: 1000
-    million: 1000000
-    billion: 1000000000
-    trillion: 1000000000000
-    hundredth: 100
-    thousandth: 1000
-    millionth: 1000000
-    billionth: 1000000000
-    trillionth: 1000000000000
-    hundredths: 100
-    thousandths: 1000
-    millionths: 1000000
-    billionths: 1000000000
-    trillionths: 1000000000000
-    dozen: 12
-    dozens: 12
+    honderd: 100
+    duizend: 1000
+    miljoen: 1000000
+    miljard: 1000000000
+    biljoen: 1000000000000
+    honderdste: 100
+    duizendste: 1000
+    miljoenste: 1000000
+    miljardste: 1000000000
+    biljoenste: 1000000000000
+    honderdsten: 100
+    duizendsten: 1000
+    miljoensten: 1000000
+    miljardsten: 1000000000
+    biljoensten: 1000000000000
+    dozijn: 12
+    gros: 144
     k: 1000
     m: 1000000
     g: 1000000000
