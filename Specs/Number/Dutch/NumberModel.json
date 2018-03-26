@@ -1,8 +1,9 @@
 [
     {
+      "Debug": true,
       "Input": "2",
       "NotSupportedByDesign": "python",
-      "NotSupported": ".net",
+      "NotSupported": "dotNet",
       "Results": [
         {
           "Text": "2",
@@ -14,9 +15,10 @@
       ]
     },
     {
+      "Debug": true,
       "Input": "één",
       "NotSupportedByDesign": "python",
-      "NotSupported": ".net",
+      "NotSupported": "dotNet",
       "Results": [
         {
           "Text": "één",
@@ -28,9 +30,10 @@
       ]
     },
     {
+      "Debug": true,
       "Input": "1/2",
       "NotSupportedByDesign": "python",
-      "NotSupported": ".net",
+      "NotSupported": "dotNet",
       "Results": [
         {
           "Text": "1/2",
