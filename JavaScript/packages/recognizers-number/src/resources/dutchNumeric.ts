@@ -8,7 +8,7 @@
 
 import { BaseNumbers } from "./baseNumbers";
 export namespace DutchNumeric {
-	export const LangMarker = 'Ned';
+	export const LangMarker = 'Nl';
 	export const RoundNumberIntegerRegex = `(honderd|duizend|miljoen|miljard|biljoen)`;
 	export const ZeroToNineIntegerRegex = `(drie|zeven|acht|vier|vijf|nul|negen|een|twee|zes)`;
 	export const NegativeNumberTermsRegex = `((min|negatief)\\s+)`;

@@ -1,5 +1,5 @@
 ﻿---
-LangMarker: Ned
+LangMarker: Nl
 #Boolean Recognizers
 TokenizerRegex: !simpleRegex
   def: '[^\w\d]'

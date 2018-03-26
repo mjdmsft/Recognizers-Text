@@ -86,11 +86,11 @@ export class DutchIntegerExtractor extends BaseNumberExtractor {
             },
             {
                 regExp: RegExpUtility.getSafeRegExp(DutchNumeric.AllIntRegexWithLocks),
-                value: "IntegerFr"
+                value: "IntegerNl"
             },
             {
                 regExp: RegExpUtility.getSafeRegExp(DutchNumeric.AllIntRegexWithDozenSuffixLocks),
-                value: "IntegerFr"
+                value: "IntegerNl"
             }
         );
 
@@ -123,7 +123,7 @@ export class DutchDoubleExtractor extends BaseNumberExtractor {
             },
             {
                 regExp: RegExpUtility.getSafeRegExp(DutchNumeric.DoubleAllFloatRegex),
-                value: "DoubleFr"
+                value: "DoubleNl"
             },
             {
                 regExp: RegExpUtility.getSafeRegExp(DutchNumeric.DoubleExponentialNotationRegex),
@@ -161,15 +161,15 @@ export class DutchFractionExtractor extends BaseNumberExtractor {
             },
             {
                 regExp: RegExpUtility.getSafeRegExp(DutchNumeric.FractionNounRegex),
-                value: "FracFr"
+                value: "FracNl"
             },
             {
                 regExp: RegExpUtility.getSafeRegExp(DutchNumeric.FractionNounWithArticleRegex),
-                value: "FracFr"
+                value: "FracNl"
             },
             {
                 regExp: RegExpUtility.getSafeRegExp(DutchNumeric.FractionPrepositionRegex),
-                value: "FracFr"
+                value: "FracNl"
             }
         );
 
@@ -189,7 +189,7 @@ export class DutchOrdinalExtractor extends BaseNumberExtractor {
             },
             {
                 regExp: RegExpUtility.getSafeRegExp(DutchNumeric.OrdinalDutchRegex),
-                value: "OrdFr"
+                value: "OrdNl"
             }
         );
 
