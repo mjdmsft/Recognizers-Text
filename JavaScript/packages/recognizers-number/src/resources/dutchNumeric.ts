@@ -57,9 +57,9 @@ export namespace DutchNumeric {
 	export const LessRegex = `((minder|lager|kleiner)(\\s+dan|\\s+als)?|beneden|onder|<)`;
 	export const EqualRegex = `(gelijk(\\s+(aan|als))?|=)`;
 	export const MoreOrEqual = `((${MoreRegex}\\s+or\\s+${EqualRegex})|at\\s+least|no\\s+${LessRegex}|>\\s*=)`;
-	export const MoreOrEqualSuffix = `(en|of)\\s+(meer|groter|hoger|grotere)(?!\\s+than)`;
+	export const MoreOrEqualSuffix = `(en|of)\\s+(meer|groter|hoger|grotere)(?!\\s+dan|?!\\s+als)`;
 	export const LessOrEqual = `((${LessRegex}\\s+or\\s+${EqualRegex})|at\\s+most|no\\s+${MoreRegex}|<\\s*=)`;
-	export const LessOrEqualSuffix = `(en|of)\\s+(minder|lager|kleiner)(?!\\s+than)`;
+	export const LessOrEqualSuffix = `(en|of)\\s+(minder|lager|kleiner)(?!\\s+dan|?!\\s+als)`;
 	export const OneNumberRangeMoreRegex1 = `(${MoreOrEqual}|${MoreRegex})\\s*(the\\s+)?(?<number1>((?!((\\.(?!\\d+))|(,(?!\\d+)))).)+)`;
 	export const OneNumberRangeMoreRegex2 = `(?<number1>((?!((\\.(?!\\d+))|(,(?!\\d+)))).)+)\\s*${MoreOrEqualSuffix}`;
 	export const OneNumberRangeLessRegex1 = `(${LessOrEqual}|${LessRegex})\\s*(the\\s+)?(?<number2>((?!((\\.(?!\\d+))|(,(?!\\d+)))).)+)`;
