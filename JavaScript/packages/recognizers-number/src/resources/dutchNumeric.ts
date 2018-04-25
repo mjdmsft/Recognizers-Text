@@ -23,9 +23,9 @@ export namespace DutchNumeric {
 	export const NumbersWithPlaceHolder = (placeholder: string) => { return `(((?<!\\d+\\s*)-\\s*)|(?<=\\b))\\d+(?!(\\.\\d+[a-zA-Z]))(?=${placeholder})`; }
 	export const NumbersWithSuffix = `(((?<!\\d+\\s*)-\\s*)|(?<=\\b))\\d+\\s*(K|k|M|T|G)(?=\\b)`;
 	export const RoundNumberIntegerRegexWithLocks = `(?<=\\b)\\d+\\s+${RoundNumberIntegerRegex}(?=\\b)`;
-	export const NumbersWithDozenSuffix = `(((?<!\\d+\\s*)-\\s*)|(?<=\\b))\\d+\\s+dozen(s)?(?=\\b)`;
+	export const NumbersWithDozenSuffix = `(((?<!\\d+\\s*)-\\s*)|(?<=\\b))\\d+\\s+dozijn(en)?(?=\\b)`;
 	export const AllIntRegexWithLocks = `((?<=\\b)${AllIntRegex}(?=\\b))`;
-	export const AllIntRegexWithDozenSuffixLocks = `(?<=\\b)(((half\\s+)?a\\s+dozen)|(${AllIntRegex}\\s+dozen(s)?))(?=\\b)`;
+	export const AllIntRegexWithDozenSuffixLocks = `(?<=\\b)(((half\\s+)?+dozijn)|(${AllIntRegex}\\s+dozijn(en)?))(?=\\b)`;
 	export const RoundNumberOrdinalRegex = `(honderdste|duizendste|miljoenste|miljardste|biljoenste)`;
 	export const BasicOrdinalRegex = `(eerste|tweede|derde|vierde|vijfde|zesde|zevende|achtste|negende|tiende|elfde|twaalfde|dertiende|veertiende|vijftiende|zestiende|zeventiende|achttiende|negentiende|twintigste|dertigste|veertigste|vijftigste|zestigste|zeventigste|tachtigste|negentigste)`;
 	export const SuffixBasicOrdinalRegex = `(((((${TensNumberIntegerRegex}(\\s+(and\\s+)?|\\s*-\\s*)${ZeroToNineIntegerRegex})|${TensNumberIntegerRegex}|${ZeroToNineIntegerRegex}|${AnIntRegex})(\\s+${RoundNumberIntegerRegex})+)\\s+(and\\s+)?)*(${TensNumberIntegerRegex}(\\s+|\\s*-\\s*))?${BasicOrdinalRegex})`;
