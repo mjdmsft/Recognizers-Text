@@ -177,6 +177,23 @@ namespace Microsoft.Recognizers.Text.DateTime
                 return ret;
             }
 
+            // handle "two days from tomorrow"
+            match = this.config.SpecialDayWithNumRegex.Match(trimedText);
+            if (match.Success && match.Index == 0 && match.Length == trimedText.Length)
+            {
+                var swift = this.config.GetSwiftDay(match.Groups["day"].Value);
+                var numErs = this.config.IntegerExtractor.Extract(trimedText);
+                var numOfDays = Convert.ToInt32((double)(this.config.NumberParser.Parse(numErs[0]).Value ?? 0));
+
+                var value = referenceDate.AddDays(numOfDays + swift);
+
+                ret.Timex = FormatUtil.LuisDate(value);
+                ret.FutureValue = ret.PastValue = value;
+                ret.Success = true;
+
+                return ret;
+            }
+
             // handle "next Sunday"
             match = this.config.NextRegex.Match(trimedText);
             if (match.Success && match.Index == 0 && match.Length == trimedText.Length)
@@ -621,13 +638,19 @@ namespace Microsoft.Recognizers.Text.DateTime
         {
             var firstDay = DateObject.MinValue.SafeCreateFromValue(year, month, 1);
             var firstWeekday = firstDay.This((DayOfWeek)weekday);
+            int dayOfWeekOfFirstDay = (int)firstDay.DayOfWeek;
 
             if (weekday == 0)
             {
                 weekday = 7;
             }
 
-            if (weekday < (int)firstDay.DayOfWeek)
+            if (dayOfWeekOfFirstDay == 0)
+            {
+                dayOfWeekOfFirstDay = 7;
+            }
+
+            if (weekday < dayOfWeekOfFirstDay)
             {
                 firstWeekday = firstDay.Next((DayOfWeek)weekday);
             }

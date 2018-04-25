@@ -649,7 +649,7 @@
 }
 ,
 {
-  "Input": "scheduel a meeting in two weeks",
+  "Input": "schedule a meeting in two weeks",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
@@ -3962,6 +3962,131 @@
         "PastResolution": {
           "startDate": "2017-11-08",
           "endDate": "2022-12-20"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out from 4 to January 22, 1995",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "from 4 to January 22, 1995",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "(1995-01-04,1995-01-22,P18D)",
+        "FutureResolution": {
+          "startDate": "1995-01-04",
+          "endDate": "1995-01-22"
+        },
+        "PastResolution": {
+          "startDate": "1995-01-04",
+          "endDate": "1995-01-22"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I want a room from 02 to April 07",
+  "Context": {
+    "ReferenceDateTime": "2018-04-02T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "from 02 to April 07",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "(XXXX-04-02,XXXX-04-07,P5D)",
+        "FutureResolution": {
+          "startDate": "2018-04-02",
+          "endDate": "2018-04-07"
+        },
+        "PastResolution": {
+          "startDate": "2017-04-02",
+          "endDate": "2017-04-07"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "schedule a meeting in couple of weeks",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "in couple of weeks",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "(2016-11-15,2016-11-22,P1W)",
+        "FutureResolution": {
+          "startDate": "2016-11-15",
+          "endDate": "2016-11-22"
+        },
+        "PastResolution": {
+          "startDate": "2016-11-15",
+          "endDate": "2016-11-22"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out 2016 june",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2016 june",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "2016-06",
+        "FutureResolution": {
+          "startDate": "2016-06-01",
+          "endDate": "2016-07-01"
+        },
+        "PastResolution": {
+          "startDate": "2016-06-01",
+          "endDate": "2016-07-01"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out 2016, nov",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2016, nov",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "2016-11",
+        "FutureResolution": {
+          "startDate": "2016-11-01",
+          "endDate": "2016-12-01"
+        },
+        "PastResolution": {
+          "startDate": "2016-11-01",
+          "endDate": "2016-12-01"
         }
       }
     }
