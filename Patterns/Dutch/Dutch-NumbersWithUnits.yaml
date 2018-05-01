@@ -57,7 +57,7 @@ AmbiguousLengthUnitList: !list
 SpeedSuffixList: !dictionary
   types: [ string, string ]
   entries:
-    Meter per second: meters / seconce|m/s|meters per seconde|metres per secondes|meter per seconde|meter per secondes
+    Meter per second: meters / seconde|m/s|meters per seconde|metres per secondes|meter per seconde|meter per secondes
     Kilometer per hour: km/h|kilometer per uur|kilometers per uur|kilometers per uur
     Kilometer per minute: km/min|kilometers per minuut|kilometer per minuut
     Kilometer per second: km/s|kilometers per seconde|kilometers per seconde
