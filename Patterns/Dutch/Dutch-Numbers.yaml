@@ -125,12 +125,12 @@ LessRegex: !simpleRegex
 EqualRegex: !simpleRegex
   def: (gelijk(\s+(aan|als))?|=)
 MoreOrEqual: !nestedRegex
-  def: (({MoreRegex}\s+of\s+{EqualRegex})|at\s+least|no\s+{LessRegex}|>\s*=)
+  def: (({MoreRegex}\s+of\s+{EqualRegex})|minstens|niet\s+{LessRegex}|>\s*=)
   references: [ MoreRegex, EqualRegex, LessRegex ]
 MoreOrEqualSuffix: !simpleRegex
   def: (en|of)\s+(meer|groter|hoger|grotere)(?!\s+dan|?!\s+als)
 LessOrEqual: !nestedRegex
-  def: (({LessRegex}\s+of\s+{EqualRegex})|at\s+most|no\s+{MoreRegex}|<\s*=)
+  def: (({LessRegex}\s+of\s+{EqualRegex})|minstens|niet\s+{MoreRegex}|<\s*=)
   references: [ LessRegex, EqualRegex, MoreRegex ]
 LessOrEqualSuffix: !simpleRegex
   def: (en|of)\s+(minder|lager|kleiner)(?!\s+dan|?!\s+als)
