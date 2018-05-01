@@ -40,7 +40,7 @@ AllIntRegexWithLocks: !nestedRegex
   def: ((?<=\b){AllIntRegex}(?=\b))
   references: [ AllIntRegex ]
 AllIntRegexWithDozenSuffixLocks: !nestedRegex
-  def: (?<=\b)(((half\s+)?+dozijn)|({AllIntRegex}\s+dozijn(en)?))(?=\b)
+  def: (?<=\b)((((half\s+)?+dozijn)|({AllIntRegex}\s+dozijn(s)?))(?=\b)
   references: [ AllIntRegex ]
 #Ordinal Regex
 RoundNumberOrdinalRegex: !simpleRegex
