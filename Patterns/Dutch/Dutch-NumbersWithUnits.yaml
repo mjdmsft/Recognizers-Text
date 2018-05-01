@@ -22,6 +22,26 @@ AreaSuffixList: !dictionary
     Square foot: ft2|ft^2|ft²
     Square mile: vierkante mijl|mi^2|mi²
     Square yard: yd^2|yd²
+#DimensionExtractorConfiguration
+InformationSuffixList: !dictionary
+  types: [ string, string ]
+  entries:
+#Information
+    Bit: -bit|bit|bits
+    Kilobit: kilobit|kilobits|kb|kbit
+    Megabit: megabit|megabits|Mb|Mbit
+    Gigabit: gigabit|gigabits|Gb|Gbit
+    Terabit: terabit|terabits|Tb|Tbit
+    Petabit: petabit|petabits|Pb|Pbit
+    Byte: -byte|byte|bytes
+    Kilobyte: -kilobyte|-kilobytes|kilobyte|kB|kilobytes|kilo byte|kilo bytes|kByte
+    Megabyte: -megabyte|-megabytes|megabyte|mB|megabytes|mega byte|mega bytes|MByte
+    Gigabyte: -gigabyte|-gigabytes|gigabyte|gB|gigabytes|giga byte|giga bytes|GByte
+    Terabyte: -terabyte|-terabytes|terabyte|tB|terabytes|tera byte|tera bytes|TByte
+    Petabyte: -petabyte|-petabytes|petabyte|pB|petabytes|peta byte|peta bytes|PByte
+AmbiguousDimensionUnitList: !list
+  types: [ string, string ]
+  entries:
 #DutchNumberWithUnitExtractorConfiguration
 BuildPrefix: !simpleRegex
   def: (?<=(\s|^))
@@ -44,7 +64,7 @@ LenghtSuffixList: !dictionary
     Mile: -mijl|mijl|mijlen
     Inch: -inch|inch|inches
     Foot: -voet|voet
-    Light year: lichtjaar|lichtjaren
+    Light year: lichtjaar|lichtjaren|lj
     Pt: pt|pint
 AmbiguousLengthUnitList: !list
   types: [ string ]
@@ -69,12 +89,12 @@ SpeedSuffixList: !dictionary
 TemperatureSuffixList: !dictionary
   types: [ string, string ]
   entries:
-    F: graden fahrenheit
+    F: graden fahrenheit|°f|fahrenheit
     K: k|kelvin
     R: rankine|°r
     D: delisle|°de
     C: graden celsius|°c|c
-    Degree: gradendeg.|deg|°
+    Degree: graden|gradendeg.|deg|°
 AmbiguousTemperatureUnitList: !list
   types: [ string ]
   entries:
@@ -115,7 +135,7 @@ AmbiguousVolumeUnitList: !list
 WeightSuffixList: !dictionary
   types: [ string, string ]
   entries:
-    Kilogram: kg|kilogram
+    Kilogram: kg|kilogram|kilo
     Gram: g|gram
     Milligram: mg|milligram
     Barrel: vat
