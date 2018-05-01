@@ -28,7 +28,7 @@ export namespace PortugueseDateTime {
 	export const DayBetweenRegex = `\\b((entre|entre\\s+[oa]s?)\\s+)(dia\\s+)?(${DayRegex})\\s*${AndRegex}\\s*(${DayRegex})\\s+${MonthSuffixRegex}((\\s+|\\s*,\\s*)${FullYearRegex})?\\b`;
 	export const OneWordPeriodRegex = `\\b(((pr[oó]xim[oa]?|[nd]?es[st]e|aquel[ea]|[uú]ltim[oa]?|em)\\s+)?(?<month>Abril|Abr|Agosto|Ago|Dezembro|Dez|Fevereiro|Fev|Janeiro|Jan|Julho|Jul|Junho|Jun|Mar[çc]o|Mar|Maio|Mai|Novembro|Nov|Outubro|Out|Septembro|Setembro|Sept|Set)|(?<=\\b(de|do|da|o|a)\\s+)?(pr[oó]xim[oa](s)?|[uú]ltim[oa]s?|est(e|a))\\s+(fim de semana|fins de semana|semana|m[êe]s|ano)|fim de semana|fins de semana|(m[êe]s|anos)? [àa] data)\\b`;
 	export const MonthWithYearRegex = `\\b(((pr[oó]xim[oa](s)?|[nd]?es[st]e|aquele|[uú]ltim[oa]?|em)\\s+)?(?<month><month>Abril|Abr|Agosto|Ago|Dezembro|Dez|Fevereiro|Fev|Janeiro|Jan|Julho|Jul|Junho|Jun|Mar[çc]o|Mar|Maio|Mai|Novembro|Nov|Outubro|Out|Septembro|Setembro|Sept|Set)\\s+((de|do|da|o|a)\\s+)?(${FullYearRegex}|(?<order>pr[oó]ximo(s)?|[uú]ltimo?|[nd]?es[st]e)\\s+ano))\\b`;
-	export const MonthNumWithYearRegex = `(${FullYearRegex}[/\\-\\.]${MonthNumRegex})|(${MonthNumRegex}[/\\-]${FullYearRegex})`;
+	export const MonthNumWithYearRegex = `(${FullYearRegex}(\\s*?)[/\\-\\.](\\s*?)${MonthNumRegex})|(${MonthNumRegex}(\\s*?)[/\\-](\\s*?)${FullYearRegex})`;
 	export const WeekOfMonthRegex = `(?<wom>(a|na\\s+)?(?<cardinal>primeira?|1a|segunda|2a|terceira|3a|[qc]uarta|4a|quinta|5a|[uú]ltima)\\s+semana\\s+${MonthSuffixRegex})`;
 	export const WeekOfYearRegex = `(?<woy>(a|na\\s+)?(?<cardinal>primeira?|1a|segunda|2a|terceira|3a|[qc]uarta|4a|quinta|5a|[uú]ltima?)\\s+semana(\\s+d[oe]?)?\\s+(${FullYearRegex}|(?<order>pr[oó]ximo|[uú]ltimo|[nd]?es[st]e)\\s+ano))`;
 	export const FollowedDateUnit = `^\\s*${DateUnitRegex}`;
@@ -104,6 +104,7 @@ export namespace PortugueseDateTime {
 	export const TimeRegex9 = `\\b(?<engtime>${HourNumRegex}\\s+(${TensTimeRegex}\\s*)?(e\\s+)?${MinuteNumRegex}?)\\b`;
 	export const TimeRegex10 = `(\\b([àa]|ao?)|na|de|da|pela)\\s+(madrugada|manh[ãa]|meio\\s*dia|meia\\s*noite|tarde|noite)`;
 	export const TimeRegex11 = `\\b(${LangTimeRegex})(${DescRegex}?)\\b`;
+	export const TimeRegex12 = `(\\b${TimePrefix}\\s+)?${BaseDateTime.HourRegex}(\\s*h\\s*)${BaseDateTime.MinuteRegex}(\\s*${DescRegex})?`;
 	export const PrepositionRegex = `(?<prep>([àa]s?|em|por|pelo|pela|no|na|de|d[oa]?)?$)`;
 	export const NowRegex = `\\b(?<now>((logo|exatamente)\\s+)?agora(\\s+mesmo)?|neste\\s+momento|(assim\\s+que|t[ãa]o\\s+cedo\\s+quanto)\\s+(poss[ií]vel|possas?|possamos)|o\\s+mais\\s+(cedo|r[aá]pido)\\s+poss[íi]vel|recentemente|previamente)\\b`;
 	export const SuffixRegex = `^\\s*((e|a|em|por|pelo|pela|no|na|de)\\s+)?(manh[ãa]|madrugada|meio\\s*dia|tarde|noite)\\b`;
@@ -200,4 +201,5 @@ export namespace PortugueseDateTime {
 	export const FutureSuffixRegex = `^[.]`;
 	export const WrittenDecades: ReadonlyMap<string, number> = new Map<string, number>([["", 0]]);
 	export const SpecialDecadeCases: ReadonlyMap<string, number> = new Map<string, number>([["", 0]]);
+	export const DefaultLanguageFallback = 'DMY';
 }
