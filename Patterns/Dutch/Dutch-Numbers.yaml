@@ -217,6 +217,7 @@ CardinalNumberMap: !dictionary
 OrdinalNumberMap: !dictionary
   types: [ string, long ]
   entries:
+    nulde: 0
     eerste: 1
     tweede: 2
     secundair: 2
@@ -251,6 +252,11 @@ OrdinalNumberMap: !dictionary
     miljoenste: 1000000
     miljardste: 1000000000
     biljoenste: 1000000000000
+    biljardste: 1000000000000000
+    triljoenste: 1000000000000000000
+    triljardste: 1000000000000000000000
+    quadriljoenste: 1000000000000000000000000
+    quadriljardste: 1000000000000000000000000000
 RoundNumberMap: !dictionary
   types: [ string, long ]
   entries:
@@ -259,11 +265,18 @@ RoundNumberMap: !dictionary
     miljoen: 1000000
     miljard: 1000000000
     biljoen: 1000000000000
+    biljard: 1000000000000000
+    triljard: 1000000000000000000
     honderdste: 100
     duizendste: 1000
     miljoenste: 1000000
     miljardste: 1000000000
     biljoenste: 1000000000000
+    biljardste: 1000000000000000
+    triljoenste: 1000000000000000000
+    triljardste: 1000000000000000000000
+    quadriljoenste: 1000000000000000000000000
+    quadriljardste: 1000000000000000000000000000
     honderdsten: 100
     duizendsten: 1000
     miljoensten: 1000000
