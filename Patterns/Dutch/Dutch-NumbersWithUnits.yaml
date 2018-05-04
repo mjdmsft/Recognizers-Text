@@ -1,0 +1,153 @@
+---
+#AgeExtractorConfiguration
+AgeSuffixList: !dictionary
+  types: [ string, string ]
+  entries:
+    Year: jaren oud|jaar oud|jaar|jaren|levensjaren
+    Month: maanden oud|maand oud|maand|maanden
+    Week: week oud|weken oud|week|weken
+    Day: dag oud|dagen oud|dag|dagen
+#AreaExtractorConfiguration
+AreaSuffixList: !dictionary
+  types: [ string, string ]
+  entries:
+    Square kilometer: vierkante kilometer|kilometer km2|kilometer km^2|km^2|km²
+    Square hectometer: vierkante hectometer|hm^2|hm²|hektar
+    Square decameter: vierkante decameter|dam^2|dam²
+    Square meter: vierkante meter|m^2|m²
+    Square decimeter: vierkante decimeter|dm^2|dm²
+    Square centimeter: vierkante centimeter|cm^2|cm²
+    Square millimeter: vierkante millimeter|mm^2|mm²
+    Square inch: in^2|in²
+    Square foot: ft2|ft^2|ft²
+    Square mile: vierkante mijl|mi^2|mi²
+    Square yard: yd^2|yd²
+#DimensionExtractorConfiguration
+InformationSuffixList: !dictionary
+  types: [ string, string ]
+  entries:
+#Information
+    Bit: -bit|bit|bits
+    Kilobit: kilobit|kilobits|kb|kbit
+    Megabit: megabit|megabits|Mb|Mbit
+    Gigabit: gigabit|gigabits|Gb|Gbit
+    Terabit: terabit|terabits|Tb|Tbit
+    Petabit: petabit|petabits|Pb|Pbit
+    Byte: -byte|byte|bytes
+    Kilobyte: -kilobyte|-kilobytes|kilobyte|kB|kilobytes|kilo byte|kilo bytes|kByte
+    Megabyte: -megabyte|-megabytes|megabyte|mB|megabytes|mega byte|mega bytes|MByte
+    Gigabyte: -gigabyte|-gigabytes|gigabyte|gB|gigabytes|giga byte|giga bytes|GByte
+    Terabyte: -terabyte|-terabytes|terabyte|tB|terabytes|tera byte|tera bytes|TByte
+    Petabyte: -petabyte|-petabytes|petabyte|pB|petabytes|peta byte|peta bytes|PByte
+AmbiguousDimensionUnitList: !list
+  types: [ string, string ]
+  entries:
+#DutchNumberWithUnitExtractorConfiguration
+BuildPrefix: !simpleRegex
+  def: (?<=(\s|^))
+BuildSuffix: !simpleRegex
+  def: (?=(\s|\W|$))
+#LengthExtractorConfiguration
+LenghtSuffixList: !dictionary
+  types: [ string, string ]
+  entries:
+    Kilometer: km|kilometer|kilometers|kilometers
+    Hectometer: hm|hectometer|hectometers
+    Decameter: dam|decameter|decameters
+    Meter: m|meter|metre|meters|metres
+    Decimeter: dm|decimeter|decimeters
+    Centimeter: cm|centimeter|centimeters
+    Millimeter: mm|millimeter|millimeters
+    Micrometer: μm|micrometer|micrometre
+    Nanometer: nm|nanometer|nanometers
+    Picometer: pm|picometer|picometre
+    Mile: -mijl|mijl|mijlen
+    Inch: -inch|inch|inches
+    Foot: -voet|voet
+    Light year: lichtjaar|lichtjaren|lj
+    Pt: pt|pint
+AmbiguousLengthUnitList: !list
+  types: [ string ]
+  entries:
+    - m
+    - pm
+    - pt
+    - pts
+#SpeedExtractorConfiguration
+SpeedSuffixList: !dictionary
+  types: [ string, string ]
+  entries:
+    Meter per second: meters / seconde|m/s|meters per seconde|metres per secondes|meter per seconde|meter per secondes
+    Kilometer per hour: km/h|kilometer per uur|kilometers per uur|kilometers per uur
+    Kilometer per minute: km/min|kilometers per minuut|kilometer per minuut
+    Kilometer per second: km/s|kilometers per seconde|kilometers per seconde
+    Mile per hour: mph|mijl per uur|mijlen per hour
+    Knot: kt|knopen
+    Foot per second: ft/s|voet/s|voet per seconde
+    Foot per minute: ft/min|voet/min|voet per minuut
+#TemperatureExtractorConfiguration
+TemperatureSuffixList: !dictionary
+  types: [ string, string ]
+  entries:
+    F: graden fahrenheit|°f|fahrenheit
+    K: k|kelvin
+    R: rankine|°r
+    D: delisle|°de
+    C: graden celsius|°c|c
+    Degree: graden|gradendeg.|deg|°
+AmbiguousTemperatureUnitList: !list
+  types: [ string ]
+  entries:
+    - c
+    - f
+    - k
+#VolumeExtractorConfiguration
+VolumeSuffixList: !dictionary
+  types: [ string, string ]
+  entries:
+    Cubic meter: m3|kubieke meter|kubieke meters
+    Cubic centimeter: kubieke  centimeter|kubieke  centimetre|kubieke centimeters
+    Cubic millimiter: kubieke millimiter
+    Hectoliter: hectoliter|hectoliters
+    Decaliter: decaliter|decaliters
+    Liter: l|liter|liters
+    Deciliter: dl|deciliter|deciliters
+    Centiliter: cl|centiliter|centiliters
+    Milliliter: ml|milliliter|milliliters
+    Cubic inch: kubieke inch
+    Cubic foot: kubieke voet
+    Cubic mile: kubieke mijl
+    Teaspoon: theelepel|theelepels
+    Tablespoon: eetlepel|eetlepels
+    Pint: pint
+    Volume unit: vat
+AmbiguousVolumeUnitList: !list
+  types: [ string ]
+  entries:
+    - l
+    - ons
+    - oz
+    - cup
+    - peck
+    - cord
+    - gill
+#WeightExtractorConfiguration
+WeightSuffixList: !dictionary
+  types: [ string, string ]
+  entries:
+    Kilogram: kg|kilogram|kilo
+    Gram: g|gram
+    Milligram: mg|milligram
+    Barrel: vat
+    Gallon: -gallon|gallon
+    Metric ton: metrische ton
+    Ton: ton
+    Pound: pond
+    Ounce: ons
+    Weight unit: ons
+AmbiguousWeightUnitList: !list
+  types: [ string ]
+  entries:
+    - g
+    - oz
+...
