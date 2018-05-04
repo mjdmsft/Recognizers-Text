@@ -1,0 +1,47 @@
+[
+  {
+    "Debug": true,
+    "Input": "twee",
+    "NotSupportedByDesign": "python",
+    "NotSupported": "dotNet",
+    "Results": [
+      {
+        "Text": "twee",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "2"
+        }
+      }
+    ]
+  },
+  {
+    "Debug": true,
+    "Input": "één",
+    "NotSupportedByDesign": "python",
+    "NotSupported": "dotNet",
+    "Results": [
+      {
+        "Text": "één",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Debug": true,
+    "Input": "1/2",
+    "NotSupportedByDesign": "python",
+    "NotSupported": "dotNet",
+    "Results": [
+      {
+        "Text": "1/2",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0,5"
+        }
+      }
+    ]
+  }
+]

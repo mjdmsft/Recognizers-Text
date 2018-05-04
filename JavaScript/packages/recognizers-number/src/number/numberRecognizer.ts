@@ -3,11 +3,13 @@ import { Recognizer } from "@microsoft/recognizers-text";
 import { Culture } from "../culture";
 import { NumberMode, NumberModel, OrdinalModel, PercentModel } from "./models";
 import { AgnosticNumberParserType, AgnosticNumberParserFactory } from "./agnosticNumberParser";
+import { DutchNumberParserConfiguration } from './dutch/parserConfiguration';
 import { EnglishNumberParserConfiguration } from "./english/parserConfiguration";
 import { SpanishNumberParserConfiguration } from "./spanish/parserConfiguration";
 import { PortugueseNumberParserConfiguration } from "./portuguese/parserConfiguration";
 import { FrenchNumberParserConfiguration } from "./french/parserConfiguration";
 import { ChineseNumberParserConfiguration } from "./chinese/parserConfiguration";
+import { DutchNumberExtractor, DutchOrdinalExtractor, DutchPercentageExtractor } from "./dutch/extractors";
 import { EnglishNumberExtractor, EnglishOrdinalExtractor, EnglishPercentageExtractor } from "./english/extractors";
 import { SpanishNumberExtractor, SpanishOrdinalExtractor, SpanishPercentageExtractor } from "./spanish/extractors";
 import { PortugueseNumberExtractor, PortugueseOrdinalExtractor, PortuguesePercentageExtractor } from "./portuguese/extractors";
@@ -100,6 +102,18 @@ export default class NumberRecognizer extends Recognizer<NumberOptions> {
         this.registerModel("PercentModel", Culture.French, (options) => new PercentModel(
             AgnosticNumberParserFactory.getParser(AgnosticNumberParserType.Percentage, new FrenchNumberParserConfiguration()),
             new FrenchPercentageExtractor()));
+        //#endregion
+
+        //#region Dutch
+        this.registerModel("NumberModel", Culture.Dutch, (options) => new NumberModel(
+            AgnosticNumberParserFactory.getParser(AgnosticNumberParserType.Number, new DutchNumberParserConfiguration()),
+            new DutchNumberExtractor(NumberMode.PureNumber)));
+        this.registerModel("OrdinalModel", Culture.Dutch, (options) => new OrdinalModel(
+            AgnosticNumberParserFactory.getParser(AgnosticNumberParserType.Ordinal, new DutchNumberParserConfiguration()),
+            new DutchOrdinalExtractor()));
+        this.registerModel("PercentModel", Culture.Dutch, (options) => new PercentModel(
+            AgnosticNumberParserFactory.getParser(AgnosticNumberParserType.Percentage, new DutchNumberParserConfiguration()),
+            new DutchPercentageExtractor()));
         //#endregion
     }
 
