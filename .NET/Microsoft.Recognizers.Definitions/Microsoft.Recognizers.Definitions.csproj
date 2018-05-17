@@ -28,6 +28,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>NumbersDefinitions.tt</DependentUpon>
     </None>
+    <None Include="Japanese\NumbersWithUnitDefinitions.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>NumbersWithUnitDefinitions.tt</DependentUpon>
+    </None>
   </ItemGroup>
 
   <ItemGroup>
@@ -90,6 +95,11 @@
       <DependentUpon>NumbersWithUnitDefinitions.tt</DependentUpon>
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Update="Dutch\ChoiceDefinitions.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ChoiceDefinitions.tt</DependentUpon>
     </Compile>
     <Compile Update="English\ChoiceDefinitions.cs">
       <DesignTime>True</DesignTime>
@@ -170,6 +180,11 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>NumbersDefinitions.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Japanese\NumbersWithUnitDefinitions.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>NumbersWithUnitDefinitions.tt</DependentUpon>
     </Compile>
     <Compile Update="Portuguese\ChoiceDefinitions.cs">
       <DesignTime>True</DesignTime>
@@ -266,6 +281,10 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>NumbersWithUnitDefinitions.cs</LastGenOutput>
     </None>
+    <None Update="Dutch\ChoiceDefinitions.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ChoiceDefinitions.cs</LastGenOutput>
+    </None>
     <None Update="English\ChoiceDefinitions.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>ChoiceDefinitions.cs</LastGenOutput>
@@ -317,6 +336,10 @@
     <None Update="Japanese\NumbersDefinitions.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>NumbersDefinitions.cs</LastGenOutput>
+    </None>
+    <None Update="Japanese\NumbersWithUnitDefinitions.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>NumbersWithUnitDefinitions.cs</LastGenOutput>
     </None>
     <None Update="Portuguese\ChoiceDefinitions.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
