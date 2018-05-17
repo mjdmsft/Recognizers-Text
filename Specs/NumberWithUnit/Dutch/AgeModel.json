@@ -1,6 +1,7 @@
 [
   {
     "Input": "Ze leerde fietsen toen ze vijf jaar oud was.",
+    "NotSupported": "javascript,dotnet",
     "Results": [
       {
         "Text": "vijf jaar oud",
@@ -14,6 +15,7 @@
   },
   {
     "Input": "Dit verhaal is tien jaar oud.",
+    "NotSupported": "javascript,dotnet",
     "Results": [
       {
         "Text": "tien jaar oud",
@@ -27,6 +29,7 @@
   },
   {
     "Input": "Ik ben nog maar 29 jaar oud",
+    "NotSupported": "javascript,dotnet",
     "Results": [
       {
         "Text": "29 jaar oud",
@@ -40,6 +43,7 @@
   },
   {
     "Input": "Ik ben nu 29 jaar",
+    "NotSupported": "javascript,dotnet",
     "Results": [
       {
         "Text": "29 jaar",
@@ -53,6 +57,7 @@
   },
   {
     "Input": "Na vijfennegentig jaar veranderen de perspectieven",
+    "NotSupported": "javascript,dotnet",
     "Results": [
       {
         "Text": "vijfennegentig jaar",
@@ -92,6 +97,7 @@
   },
   {
     "Input": "25% van de gevallen worden pas gediagnosticeerd als ze ongeveer 3 jaar oud zijn.",
+    "NotSupported": "javascript,dotnet",
     "Results": [
       {
         "Text": "3 jaar oud",
@@ -105,6 +111,7 @@
   },
   {
     "Input": "Wanneer zal er druk zijn om een belofte van een jaar oud te vervullen?",
+    "NotSupported": "javascript,dotnet",
     "Results": [
       {
         "Text": "een jaar oud",
@@ -118,6 +125,7 @@
   },
   {
     "Input": "Het gebeurde toen de baby nog maar tien maanden oud was.",
+    "NotSupported": "javascript,dotnet",
     "Results": [
       {
         "Text": "tien maanden oud",
@@ -131,6 +139,7 @@
   },
   {
     "Input": "Het commissievoorstel is 8 maanden oud.",
+    "NotSupported": "javascript,dotnet",
     "Results": [
       {
         "Text": "8 maanden oud",
@@ -144,6 +153,7 @@
   },
   {
     "Input": "Ongeveer 50% van de gevallen wordt gediagnosticeerd wanneer ze ongeveer 18 maanden oud zijn.",
+    "NotSupported": "javascript,dotnet",
     "Results": [
       {
         "Text": "18 maanden oud",
@@ -157,6 +167,7 @@
   },
   {
     "Input": "Het is mogelijk, maar in 2006 was 95% jonger dan drie maanden.",
+    "NotSupported": "javascript,dotnet",
     "Results": [
       {
         "Text": "drie maanden",
@@ -170,6 +181,7 @@
   },
   {
     "Input": "Als we doorgaan in december dan is het project al drie weken oud.",
+    "NotSupported": "javascript,dotnet",
     "Results": [
       {
         "Text": "drie weken oud",
@@ -183,6 +195,7 @@
   },
   {
     "Input": "Op de leeftijd van 6 weken kan iemand al kerst vieren.",
+    "NotSupported": "javascript,dotnet",
     "Results": [
       {
         "Text": "6 weken",
@@ -196,6 +209,7 @@
   },
   {
     "Input": "Een energierekening van 90 dagen geleden is vrij laat.",
+    "NotSupported": "javascript,dotnet",
     "Results": [
       {
         "Text": "90 dagen",
@@ -209,7 +223,7 @@
   },
   {
     "Input": "Hij is ongeveer 40 - 50 jaar oud.",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript,dotnet",
     "Results": [
       {
         "Text": "50 jaar oud",
